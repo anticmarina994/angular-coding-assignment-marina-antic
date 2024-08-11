@@ -1,0 +1,9 @@
+<app-nav title="Posts"/>
+
+@if(posts$ | async; as posts) {
+    <div class="wrapper">
+        @for(post of posts; track post.id) {
+            <app-post [post]="post" (postClickedEvent)="postClicked($event)"></app-post>
+        }
+    </div>
+}

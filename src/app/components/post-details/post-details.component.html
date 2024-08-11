@@ -1,0 +1,12 @@
+<app-nav title="Post details"/>
+
+<div class="wrapper">
+    <button mat-icon-button (click)="navigateToPosts()">
+        <mat-icon>arrow_back</mat-icon>
+    </button>
+
+    @if(post$ | async; as post) {
+        <h1>{{post.title | uppercase}}</h1>
+        <p>{{post.body}}</p>
+    }
+</div>
